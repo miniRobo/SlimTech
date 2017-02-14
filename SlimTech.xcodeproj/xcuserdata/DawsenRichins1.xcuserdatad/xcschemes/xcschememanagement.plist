@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>JBChart.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>SlimTech.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +28,16 @@
 			<true/>
 		</dict>
 		<key>5F86FEBF1E52632B00A5DE86</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5F86FED61E5263AC00A5DE86</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5F86FEDE1E5263AC00A5DE86</key>
 		<dict>
 			<key>primary</key>
 			<true/>

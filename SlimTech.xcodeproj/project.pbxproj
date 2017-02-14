@@ -15,6 +15,17 @@
 		5F86FEAF1E52632B00A5DE86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F86FEAD1E52632B00A5DE86 /* LaunchScreen.storyboard */; };
 		5F86FEBA1E52632B00A5DE86 /* SlimTechTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F86FEB91E52632B00A5DE86 /* SlimTechTests.swift */; };
 		5F86FEC51E52632B00A5DE86 /* SlimTechUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F86FEC41E52632B00A5DE86 /* SlimTechUITests.swift */; };
+		5F86FEE01E5263AC00A5DE86 /* JBChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F86FED71E5263AC00A5DE86 /* JBChart.framework */; };
+		5F86FEE71E5263AC00A5DE86 /* JBChartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F86FEE61E5263AC00A5DE86 /* JBChartTests.m */; };
+		5F86FEE91E5263AC00A5DE86 /* JBChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F86FED91E5263AC00A5DE86 /* JBChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F86FEEC1E5263AC00A5DE86 /* JBChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F86FED71E5263AC00A5DE86 /* JBChart.framework */; };
+		5F86FEED1E5263AC00A5DE86 /* JBChart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F86FED71E5263AC00A5DE86 /* JBChart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F86FEFC1E5263D200A5DE86 /* JBBarChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F86FEF61E5263D200A5DE86 /* JBBarChartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F86FEFD1E5263D200A5DE86 /* JBBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F86FEF71E5263D200A5DE86 /* JBBarChartView.m */; };
+		5F86FEFE1E5263D200A5DE86 /* JBChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F86FEF81E5263D200A5DE86 /* JBChartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F86FEFF1E5263D200A5DE86 /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F86FEF91E5263D200A5DE86 /* JBChartView.m */; };
+		5F86FF001E5263D200A5DE86 /* JBLineChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F86FEFA1E5263D200A5DE86 /* JBLineChartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F86FF011E5263D200A5DE86 /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F86FEFB1E5263D200A5DE86 /* JBLineChartView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +43,42 @@
 			remoteGlobalIDString = 5F86FE9D1E52632B00A5DE86;
 			remoteInfo = SlimTech;
 		};
+		5F86FEE11E5263AC00A5DE86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F86FE961E52632B00A5DE86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F86FED61E5263AC00A5DE86;
+			remoteInfo = JBChart;
+		};
+		5F86FEE31E5263AC00A5DE86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F86FE961E52632B00A5DE86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F86FE9D1E52632B00A5DE86;
+			remoteInfo = SlimTech;
+		};
+		5F86FEEA1E5263AC00A5DE86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F86FE961E52632B00A5DE86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F86FED61E5263AC00A5DE86;
+			remoteInfo = JBChart;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5F86FEF11E5263AC00A5DE86 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5F86FEED1E5263AC00A5DE86 /* JBChart.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5F86FE9E1E52632B00A5DE86 /* SlimTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlimTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +95,18 @@
 		5F86FEC01E52632B00A5DE86 /* SlimTechUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlimTechUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F86FEC41E52632B00A5DE86 /* SlimTechUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlimTechUITests.swift; sourceTree = "<group>"; };
 		5F86FEC61E52632B00A5DE86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F86FED71E5263AC00A5DE86 /* JBChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JBChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F86FED91E5263AC00A5DE86 /* JBChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBChart.h; sourceTree = "<group>"; };
+		5F86FEDA1E5263AC00A5DE86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F86FEDF1E5263AC00A5DE86 /* JBChartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JBChartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F86FEE61E5263AC00A5DE86 /* JBChartTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBChartTests.m; sourceTree = "<group>"; };
+		5F86FEE81E5263AC00A5DE86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F86FEF61E5263D200A5DE86 /* JBBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBarChartView.h; sourceTree = "<group>"; };
+		5F86FEF71E5263D200A5DE86 /* JBBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBarChartView.m; sourceTree = "<group>"; };
+		5F86FEF81E5263D200A5DE86 /* JBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartView.h; sourceTree = "<group>"; };
+		5F86FEF91E5263D200A5DE86 /* JBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartView.m; sourceTree = "<group>"; };
+		5F86FEFA1E5263D200A5DE86 /* JBLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartView.h; sourceTree = "<group>"; };
+		5F86FEFB1E5263D200A5DE86 /* JBLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F86FEEC1E5263AC00A5DE86 /* JBChart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +132,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5F86FED31E5263AC00A5DE86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F86FEDC1E5263AC00A5DE86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F86FEE01E5263AC00A5DE86 /* JBChart.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,6 +156,8 @@
 				5F86FEA01E52632B00A5DE86 /* SlimTech */,
 				5F86FEB81E52632B00A5DE86 /* SlimTechTests */,
 				5F86FEC31E52632B00A5DE86 /* SlimTechUITests */,
+				5F86FED81E5263AC00A5DE86 /* JBChart */,
+				5F86FEE51E5263AC00A5DE86 /* JBChartTests */,
 				5F86FE9F1E52632B00A5DE86 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +168,8 @@
 				5F86FE9E1E52632B00A5DE86 /* SlimTech.app */,
 				5F86FEB51E52632B00A5DE86 /* SlimTechTests.xctest */,
 				5F86FEC01E52632B00A5DE86 /* SlimTechUITests.xctest */,
+				5F86FED71E5263AC00A5DE86 /* JBChart.framework */,
+				5F86FEDF1E5263AC00A5DE86 /* JBChartTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,7 +206,53 @@
 			path = SlimTechUITests;
 			sourceTree = "<group>";
 		};
+		5F86FED81E5263AC00A5DE86 /* JBChart */ = {
+			isa = PBXGroup;
+			children = (
+				5F86FED91E5263AC00A5DE86 /* JBChart.h */,
+				5F86FEF51E5263B200A5DE86 /* Classes */,
+				5F86FEDA1E5263AC00A5DE86 /* Info.plist */,
+			);
+			path = JBChart;
+			sourceTree = "<group>";
+		};
+		5F86FEE51E5263AC00A5DE86 /* JBChartTests */ = {
+			isa = PBXGroup;
+			children = (
+				5F86FEE61E5263AC00A5DE86 /* JBChartTests.m */,
+				5F86FEE81E5263AC00A5DE86 /* Info.plist */,
+			);
+			path = JBChartTests;
+			sourceTree = "<group>";
+		};
+		5F86FEF51E5263B200A5DE86 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5F86FEF61E5263D200A5DE86 /* JBBarChartView.h */,
+				5F86FEF71E5263D200A5DE86 /* JBBarChartView.m */,
+				5F86FEF81E5263D200A5DE86 /* JBChartView.h */,
+				5F86FEF91E5263D200A5DE86 /* JBChartView.m */,
+				5F86FEFA1E5263D200A5DE86 /* JBLineChartView.h */,
+				5F86FEFB1E5263D200A5DE86 /* JBLineChartView.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5F86FED41E5263AC00A5DE86 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F86FF001E5263D200A5DE86 /* JBLineChartView.h in Headers */,
+				5F86FEFC1E5263D200A5DE86 /* JBBarChartView.h in Headers */,
+				5F86FEFE1E5263D200A5DE86 /* JBChartView.h in Headers */,
+				5F86FEE91E5263AC00A5DE86 /* JBChart.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		5F86FE9D1E52632B00A5DE86 /* SlimTech */ = {
@@ -138,10 +262,12 @@
 				5F86FE9A1E52632B00A5DE86 /* Sources */,
 				5F86FE9B1E52632B00A5DE86 /* Frameworks */,
 				5F86FE9C1E52632B00A5DE86 /* Resources */,
+				5F86FEF11E5263AC00A5DE86 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5F86FEEB1E5263AC00A5DE86 /* PBXTargetDependency */,
 			);
 			name = SlimTech;
 			productName = SlimTech;
@@ -184,6 +310,43 @@
 			productReference = 5F86FEC01E52632B00A5DE86 /* SlimTechUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		5F86FED61E5263AC00A5DE86 /* JBChart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F86FEEE1E5263AC00A5DE86 /* Build configuration list for PBXNativeTarget "JBChart" */;
+			buildPhases = (
+				5F86FED21E5263AC00A5DE86 /* Sources */,
+				5F86FED31E5263AC00A5DE86 /* Frameworks */,
+				5F86FED41E5263AC00A5DE86 /* Headers */,
+				5F86FED51E5263AC00A5DE86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JBChart;
+			productName = JBChart;
+			productReference = 5F86FED71E5263AC00A5DE86 /* JBChart.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5F86FEDE1E5263AC00A5DE86 /* JBChartTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F86FEF21E5263AC00A5DE86 /* Build configuration list for PBXNativeTarget "JBChartTests" */;
+			buildPhases = (
+				5F86FEDB1E5263AC00A5DE86 /* Sources */,
+				5F86FEDC1E5263AC00A5DE86 /* Frameworks */,
+				5F86FEDD1E5263AC00A5DE86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F86FEE21E5263AC00A5DE86 /* PBXTargetDependency */,
+				5F86FEE41E5263AC00A5DE86 /* PBXTargetDependency */,
+			);
+			name = JBChartTests;
+			productName = JBChartTests;
+			productReference = 5F86FEDF1E5263AC00A5DE86 /* JBChartTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -208,6 +371,15 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 5F86FE9D1E52632B00A5DE86;
 					};
+					5F86FED61E5263AC00A5DE86 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					5F86FEDE1E5263AC00A5DE86 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5F86FE9D1E52632B00A5DE86;
+					};
 				};
 			};
 			buildConfigurationList = 5F86FE991E52632B00A5DE86 /* Build configuration list for PBXProject "SlimTech" */;
@@ -226,6 +398,8 @@
 				5F86FE9D1E52632B00A5DE86 /* SlimTech */,
 				5F86FEB41E52632B00A5DE86 /* SlimTechTests */,
 				5F86FEBF1E52632B00A5DE86 /* SlimTechUITests */,
+				5F86FED61E5263AC00A5DE86 /* JBChart */,
+				5F86FEDE1E5263AC00A5DE86 /* JBChartTests */,
 			);
 		};
 /* End PBXProject section */
@@ -249,6 +423,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5F86FEBE1E52632B00A5DE86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F86FED51E5263AC00A5DE86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F86FEDD1E5263AC00A5DE86 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -284,6 +472,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5F86FED21E5263AC00A5DE86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F86FEFD1E5263D200A5DE86 /* JBBarChartView.m in Sources */,
+				5F86FF011E5263D200A5DE86 /* JBLineChartView.m in Sources */,
+				5F86FEFF1E5263D200A5DE86 /* JBChartView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F86FEDB1E5263AC00A5DE86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F86FEE71E5263AC00A5DE86 /* JBChartTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -296,6 +502,21 @@
 			isa = PBXTargetDependency;
 			target = 5F86FE9D1E52632B00A5DE86 /* SlimTech */;
 			targetProxy = 5F86FEC11E52632B00A5DE86 /* PBXContainerItemProxy */;
+		};
+		5F86FEE21E5263AC00A5DE86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F86FED61E5263AC00A5DE86 /* JBChart */;
+			targetProxy = 5F86FEE11E5263AC00A5DE86 /* PBXContainerItemProxy */;
+		};
+		5F86FEE41E5263AC00A5DE86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F86FE9D1E52632B00A5DE86 /* SlimTech */;
+			targetProxy = 5F86FEE31E5263AC00A5DE86 /* PBXContainerItemProxy */;
+		};
+		5F86FEEB1E5263AC00A5DE86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F86FED61E5263AC00A5DE86 /* JBChart */;
+			targetProxy = 5F86FEEA1E5263AC00A5DE86 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -488,6 +709,72 @@
 			};
 			name = Release;
 		};
+		5F86FEEF1E5263AC00A5DE86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = JBChart/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = come.Jawbone.JBChart;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5F86FEF01E5263AC00A5DE86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = JBChart/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = come.Jawbone.JBChart;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5F86FEF31E5263AC00A5DE86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = JBChartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = come.Jawbone.JBChartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlimTech.app/SlimTech";
+			};
+			name = Debug;
+		};
+		5F86FEF41E5263AC00A5DE86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = JBChartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = come.Jawbone.JBChartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlimTech.app/SlimTech";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -521,6 +808,22 @@
 			buildConfigurations = (
 				5F86FED01E52632B00A5DE86 /* Debug */,
 				5F86FED11E52632B00A5DE86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5F86FEEE1E5263AC00A5DE86 /* Build configuration list for PBXNativeTarget "JBChart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F86FEEF1E5263AC00A5DE86 /* Debug */,
+				5F86FEF01E5263AC00A5DE86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5F86FEF21E5263AC00A5DE86 /* Build configuration list for PBXNativeTarget "JBChartTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F86FEF31E5263AC00A5DE86 /* Debug */,
+				5F86FEF41E5263AC00A5DE86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
