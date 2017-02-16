@@ -12,23 +12,25 @@ import JBChart
 class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSource {
     
     @IBOutlet weak var barChart: JBBarChartView!
-    
+        
     @IBOutlet weak var informationLabel: UILabel!
     
    
-    var chartData = [0.5,1.5,3.5,4.0,4.1,7.7,9.9,10,11,11,11,11,11,11,11,12.5,13,13.2,13.3,15,15.1,15.1,15.1,18]
+    var chartData = [0.5,1.5,3.5,4.0,4.1,7.7,9.9,10,11,11,11,11,11,11,11,12.5,13,13.2,13.3,15,15.1,15.1,15.1,17.9]
     var chartLegend = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
-
+    //var chartData = [1,2,3,7]
+    //var chartLegend = [1,2,3,4]
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.darkGray
     
         //bar chart setup
-        barChart.backgroundColor = UIColor.darkGray
+        barChart.backgroundColor = UIColor.clear
         barChart.delegate = self
         barChart.dataSource = self
         barChart.minimumValue = 0
         barChart.maximumValue = CGFloat(chartData.max()!)
+        
         
         barChart.reloadData()
         
@@ -43,6 +45,7 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: barChart.frame.width, height: 16))
         
         var xAxis = ""
+        var yAxis = ""
         var section = Int(barChart.frame.width)/chartLegend.count
         var iterator = 0
         
@@ -61,13 +64,23 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
             iterator += 1
             
         }
+        iterator = 0
+        let max = Int(chartData.max()! + 1)
+        
+        while iterator <= max {
+            yAxis += "\(iterator)"
+            yAxis += " "
+            iterator += 1
+        }
+        //print(yAxis)
+        print(barChart.frame.height)
     
         
         
         
-        let footer1 = UILabel(frame: CGRect(x: 0, y: 0, width: barChart.frame.width - 26 , height: 16))
-        footer1.textColor = UIColor.white
-        footer1.text = xAxis/*"\(chartLegend[0])"*/
+        let xLabel = UILabel(frame: CGRect(x: 0, y: 0, width: barChart.frame.width - 26 , height: 16))
+        xLabel.textColor = UIColor.white
+        xLabel.text = xAxis/*"\(chartLegend[0])"*/
         //footer1.backgroundColor = UIColor.red
         
         /*let footer2 = UILabel(frame: CGRect(x: barChart.frame.width/2 - 26, y: 0, width: barChart.frame.width/2 - 29, height: 16))
@@ -76,9 +89,13 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
         footer2.textAlignment = NSTextAlignment.right
         //footer2.backgroundColor = UIColor.green
         */
+        let yLabel = UILabel(frame: CGRect(x:0, y: 0, width: 16, height: barChart.frame.height))
+        yLabel.textColor = UIColor.white
+        yLabel.text = yAxis
+        //yLabel.backgroundColor = UIColor.red
         
-        footerView.addSubview(footer1)
-        //footerView.addSubview(footer2)
+        footerView.addSubview(xLabel)
+        footerView.addSubview(yLabel)
         
         
         
@@ -87,7 +104,7 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
         header.font = UIFont.systemFont(ofSize: 24)
         header.text = "Phone Usage"
         header.textAlignment = NSTextAlignment.center
-        footer1.font = UIFont.systemFont(ofSize: 8)
+        xLabel.font = UIFont.systemFont(ofSize: 8)
         
         barChart.footerView = footerView
         barChart.headerView = header
@@ -137,7 +154,8 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     
     func barChartView(_ barChartView: JBBarChartView!, colorForBarViewAt index: UInt) -> UIColor! {
         
-        return (index % 2 == 0) ? UIColor.lightGray : UIColor.white
+        return (index % 2 == 0) ? UIColor.lightGray : UIColor.gray
+        
         
     }
     
@@ -154,6 +172,15 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     func didDeselect(_ barChartView: JBBarChartView!) {
         informationLabel.text = ""
     }
+    
+    func barSelectionColor(for barChartView: JBBarChartView!) -> UIColor! {
+        return UIColor.black
+    }
+    func barPadding(for barChartView: JBBarChartView!) -> CGFloat {
+        return CGFloat(3.0)
+    }
+    
+    
     
 
 }
