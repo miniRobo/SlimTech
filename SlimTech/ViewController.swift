@@ -18,10 +18,12 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     
     @IBOutlet weak var informationLabel: UILabel!
     
+    @IBOutlet weak var xLabel: UILabel!
+    @IBOutlet weak var yLabel: UILabel!
    
     //var chartData = [0.5,1.5,3.5,4.0,4.1,7.7,9.9,10,11,11,11,11,11,11,11,12.5,13,13.2,13.3,15,15.1,15.1,15.1,17.9]
     //var chartLegend = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
-    var chartData = [1,2,3,7,9,9,9,15]
+    var chartData = [1,2,3,7,9,9.5,10.3,18]
     var chartLegend = [1,2,3,4,5,6,7,8]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +52,36 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
         
         barChart.setState(.collapsed, animated: false)
         lineChart.setState(.collapsed, animated: false)
+        
+        
+        var xString = " "
+        var yString = ""//"24\n\n20\n\n16\n\n12\n\n8\n\n4\n\n0\n\n3\n\n4"
+        
+        for xValues in chartLegend {
+            xString += "   \(xValues)    "
+        }
+        xLabel.text = xString
+        
+        var max: Double = Double(chartData.max()!)
+        var increment = (Double(max)/9.0).rounded()
+        var i = 9
+        max = 8 * increment
+        
+        while(i>0){
+            if(i==9){
+                yString += "\(Int(max))\n\n"
+                max = max-increment
+            } else if(i==1){
+                yString += "0"
+            } else{
+                yString += "\(Int(max))\n\n"
+                max = max - increment
+            }
+            
+            i-=1
+        }
+        yLabel.text = yString
+        
         
         
     }
@@ -238,6 +270,7 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
             return UIColor.green
         }
     }
+    
     
     
     

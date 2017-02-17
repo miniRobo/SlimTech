@@ -30,9 +30,12 @@
                                 <rect key="frame" x="25" y="20" width="327" height="313"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prS-Ai-8e3">
-                                <rect key="frame" x="0.0" y="0.0" width="52" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prS-Ai-8e3">
+                                <rect key="frame" x="0.0" y="0.0" width="48" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="t9e-2U-ub8"/>
+                                    <constraint firstAttribute="width" constant="48" id="twx-zg-HjO"/>
+                                </constraints>
                                 <state key="normal" title="Switch">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -52,16 +55,32 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8k-TT-0zH" userLabel="YLabel">
+                                <rect key="frame" x="4" y="16" width="25" height="384"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLE-1i-wdh" userLabel="XLabel">
+                                <rect key="frame" x="25" y="362" width="327" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.023899266556147426" green="0.3787705098624729" blue="0.8006193329015544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cHq-MT-Ufd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="2c6-dc-Pcb"/>
                             <constraint firstItem="Otk-EE-KG3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="9" id="6Pi-ez-Ome"/>
+                            <constraint firstItem="prS-Ai-8e3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6cX-wP-r7G"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Otk-EE-KG3" secondAttribute="trailing" constant="7" id="8nF-Ae-FZb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yx8-8J-9Tg" secondAttribute="trailing" constant="9" id="Aic-OX-XCf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cHq-MT-Ufd" secondAttribute="trailing" constant="9" id="CRy-0N-v51"/>
                             <constraint firstItem="yx8-8J-9Tg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="H6M-Ie-Yam"/>
                             <constraint firstItem="Otk-EE-KG3" firstAttribute="top" secondItem="cHq-MT-Ufd" secondAttribute="bottom" constant="16" id="Mjn-sx-nSi"/>
+                            <constraint firstItem="prS-Ai-8e3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="d4d-LA-bHU"/>
                             <constraint firstItem="Otk-EE-KG3" firstAttribute="top" secondItem="yx8-8J-9Tg" secondAttribute="bottom" constant="16" id="lRL-dn-xfr"/>
                             <constraint firstItem="yx8-8J-9Tg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="9" id="o7n-pF-RCI"/>
                             <constraint firstItem="cHq-MT-Ufd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="9" id="oBq-9I-PYV"/>
@@ -73,11 +92,13 @@
                         <outlet property="informationLabel" destination="Otk-EE-KG3" id="q6e-Ny-GeA"/>
                         <outlet property="lineChart" destination="cHq-MT-Ufd" id="PkV-iA-WBL"/>
                         <outlet property="switchButton" destination="prS-Ai-8e3" id="qbG-pB-eZP"/>
+                        <outlet property="xLabel" destination="XLE-1i-wdh" id="KFw-bz-08n"/>
+                        <outlet property="yLabel" destination="g8k-TT-0zH" id="ChY-od-Apf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133.59999999999999" y="141.67916041979012"/>
+            <point key="canvasLocation" x="132" y="139.880059970015"/>
         </scene>
     </scenes>
 </document>
