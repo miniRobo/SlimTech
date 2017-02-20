@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F0B225C1E582EBA00271CD3 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0B225B1E582EBA00271CD3 /* SettingsVC.swift */; };
 		5F86FEA21E52632B00A5DE86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F86FEA11E52632B00A5DE86 /* AppDelegate.swift */; };
 		5F86FEA41E52632B00A5DE86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F86FEA31E52632B00A5DE86 /* ViewController.swift */; };
 		5F86FEA71E52632B00A5DE86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F86FEA51E52632B00A5DE86 /* Main.storyboard */; };
@@ -81,6 +82,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F0B225B1E582EBA00271CD3 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		5F86FE9E1E52632B00A5DE86 /* SlimTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlimTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F86FEA11E52632B00A5DE86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F86FEA31E52632B00A5DE86 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			children = (
 				5F86FEA11E52632B00A5DE86 /* AppDelegate.swift */,
 				5F86FEA31E52632B00A5DE86 /* ViewController.swift */,
+				5F0B225B1E582EBA00271CD3 /* SettingsVC.swift */,
 				5F86FEA51E52632B00A5DE86 /* Main.storyboard */,
 				5F86FEAB1E52632B00A5DE86 /* Assets.xcassets */,
 				5F86FEAD1E52632B00A5DE86 /* LaunchScreen.storyboard */,
@@ -451,6 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F86FEA41E52632B00A5DE86 /* ViewController.swift in Sources */,
+				5F0B225C1E582EBA00271CD3 /* SettingsVC.swift in Sources */,
 				5F86FEA21E52632B00A5DE86 /* AppDelegate.swift in Sources */,
 				5F86FEAA1E52632B00A5DE86 /* SlimTech.xcdatamodeld in Sources */,
 			);

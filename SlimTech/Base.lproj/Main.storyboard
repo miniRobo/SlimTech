@@ -69,6 +69,19 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DT5-34-rLd" userLabel="Settings Button">
+                                <rect key="frame" x="318" y="0.0" width="57" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="6xg-PL-o5w"/>
+                                    <constraint firstAttribute="width" constant="57" id="oYR-cL-aiI"/>
+                                </constraints>
+                                <state key="normal" title="Settings">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="auS-7L-bU6" kind="show" id="rTt-5h-CE0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.023899266556147426" green="0.3787705098624729" blue="0.8006193329015544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -79,12 +92,14 @@
                             <constraint firstAttribute="trailingMargin" secondItem="yx8-8J-9Tg" secondAttribute="trailing" constant="9" id="Aic-OX-XCf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cHq-MT-Ufd" secondAttribute="trailing" constant="9" id="CRy-0N-v51"/>
                             <constraint firstItem="yx8-8J-9Tg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="H6M-Ie-Yam"/>
+                            <constraint firstAttribute="trailing" secondItem="DT5-34-rLd" secondAttribute="trailing" id="JiN-ep-ZHb"/>
                             <constraint firstItem="Otk-EE-KG3" firstAttribute="top" secondItem="cHq-MT-Ufd" secondAttribute="bottom" constant="16" id="Mjn-sx-nSi"/>
                             <constraint firstItem="prS-Ai-8e3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="d4d-LA-bHU"/>
                             <constraint firstItem="Otk-EE-KG3" firstAttribute="top" secondItem="yx8-8J-9Tg" secondAttribute="bottom" constant="16" id="lRL-dn-xfr"/>
                             <constraint firstItem="yx8-8J-9Tg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="9" id="o7n-pF-RCI"/>
                             <constraint firstItem="cHq-MT-Ufd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="9" id="oBq-9I-PYV"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Otk-EE-KG3" secondAttribute="bottom" constant="267" id="tL7-Er-iPt"/>
+                            <constraint firstItem="DT5-34-rLd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="uf1-tY-fDi"/>
                         </constraints>
                     </view>
                     <connections>
@@ -99,6 +114,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="139.880059970015"/>
+        </scene>
+        <!--SettingsVC-->
+        <scene sceneID="kLD-e9-pw9">
+            <objects>
+                <viewController id="auS-7L-bU6" customClass="SettingsVC" customModule="SlimTech" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9ES-Oo-dfy"/>
+                        <viewControllerLayoutGuide type="bottom" id="hGc-Ne-vwV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b2Q-zB-haA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oid-in-BWb">
+                                <rect key="frame" x="16" y="12" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="auS-7L-bU6" eventType="touchUpInside" id="qJ3-4A-Vya"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F0a-zp-rpI">
+                                <rect key="frame" x="45" y="97" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fet-UP-AxG">
+                                <rect key="frame" x="45" y="178" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Obi-my-fgz">
+                                <rect key="frame" x="45" y="272" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" red="0.024300353601574898" green="0.38026136159896851" blue="0.80018776655197144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aec-yg-Fxl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="877.60000000000002" y="139.880059970015"/>
         </scene>
     </scenes>
 </document>

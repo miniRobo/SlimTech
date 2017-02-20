@@ -20,7 +20,9 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     
     @IBOutlet weak var xLabel: UILabel!
     @IBOutlet weak var yLabel: UILabel!
-   
+    
+    //TEST DATA
+    
     //var chartData = [0.5,1.5,3.5,4.0,4.1,7.7,9.9,10,11,11,11,11,11,11,11,12.5,13,13.2,13.3,15,15.1,15.1,15.1,17.9]
     //var chartLegend = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
     var chartData = [1,2,3,7,9,9.5,10.3,18]
@@ -28,8 +30,11 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black
-        //barChart.isHidden = true
-        //bar chart setup
+        
+        
+     //creation for the barChart and LineChart views
+        
+        
         barChart.backgroundColor = UIColor.gray
         barChart.delegate = self
         barChart.dataSource = self
@@ -37,7 +42,6 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
         barChart.maximumValue = CGFloat(chartData.max()!)
         
         lineChart.isHidden = true
-        //bar chart setup
         lineChart.backgroundColor = UIColor.gray
         lineChart.delegate = self
         lineChart.dataSource = self
@@ -53,9 +57,10 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
         barChart.setState(.collapsed, animated: false)
         lineChart.setState(.collapsed, animated: false)
         
-        
+        //mathematical work around for the y and x axis labels
+        //TODO: fix resizing issue
         var xString = " "
-        var yString = ""//"24\n\n20\n\n16\n\n12\n\n8\n\n4\n\n0\n\n3\n\n4"
+        var yString = ""
         
         for xValues in chartLegend {
             xString += "   \(xValues)    "
@@ -89,6 +94,8 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     
     override func viewWillAppear(_ animated: Bool) {
       
+        //adds labels to the graph at the moment of appearance on the screen
+        
         let footer = UILabel(frame: CGRect(x: 0, y: barChart.frame.height + 3, width: barChart.frame.width, height: 20))
         
         
@@ -110,6 +117,8 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     
     
     @IBAction func switchButtonPressed(_ sender: Any) {
+        //allows for the switching between views of line graph and bar graph
+        
         if(barChart.isHidden == true){
             
             barChart.isHidden = false
@@ -134,7 +143,7 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        //reloads data of the graph every time a switch between the graphs is made
         barChart.reloadData()
         lineChart.reloadData()
         
@@ -143,7 +152,7 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     
     
     override func viewDidDisappear(_ animated: Bool) {
-        
+        //gets rid of the graph view with an animation every time new view is presented
         super.viewDidDisappear(animated)
         hideChart()
         
@@ -171,13 +180,13 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     }
     
     func barChartView(_ barChartView: JBBarChartView!, heightForBarViewAt index: UInt) -> CGFloat {
-        
+        //returning the height for each bar on the graph
         return CGFloat(chartData[Int(index)])
         
     }
     
     func barChartView(_ barChartView: JBBarChartView!, colorForBarViewAt index: UInt) -> UIColor! {
-        
+        //switches the color between each graph
         return (index % 2 == 0) ? UIColor.blue : UIColor.green
         
         
@@ -185,7 +194,8 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     
     
     func barChartView(_ barChartView: JBBarChartView!, didSelectBarAt index: UInt, touch touchPoint: CGPoint) {
-        
+        //provides animation for the clicking mechanism on the graph
+        //displays the data to the user for that time clicked
         let data = chartData[Int(index)]
         let key = chartLegend[Int(index)]
         
