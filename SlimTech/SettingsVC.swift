@@ -11,13 +11,16 @@ import UIKit
 class SettingsVC: UIViewController {
     
     @IBOutlet weak var timeAlertSwitch: UISwitch!
+    @IBOutlet weak var percentAlertSwitch: UISwitch!
     
     @IBOutlet weak var timeAlertPicker: UIDatePicker!
     
     @IBOutlet weak var saveButton: UIButton!
     
     @IBOutlet weak var timeAlertLabel: UILabel!
+    @IBOutlet weak var percentAlertLabel: UILabel!
     
+    @IBOutlet weak var percentUsageTextEntry: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +30,9 @@ class SettingsVC: UIViewController {
         
         saveButton.isHidden = true
         
-        timeAlertSwitch.isOn = false
         timeAlertPicker.isHidden = true
+        
+        percentUsageTextEntry.isHidden = true
         
         
         
@@ -63,6 +67,49 @@ class SettingsVC: UIViewController {
             timeAlertLabel.text = "Daily Usage Reminder"
         }
     }
+    
+    //setting provided in storyboard for when a percent usage reminder needs to be set
+    //programmatically created a done button because storyboard didn't have environment needed for impolementation
+    
+    @IBAction func percentAlertSwitchPressed(_ sender: Any) {
+        
+        if (percentAlertSwitch.isOn == true){
+            let keyPadDone = UIToolbar.init()
+            keyPadDone.sizeToFit()
+            let keyPadButtonDone = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.done,
+                                                  target: self, action: #selector(SettingsVC.donePressed(_:)))
+            
+            keyPadDone.items = [keyPadButtonDone] // You can even add cancel button too
+            percentUsageTextEntry.inputAccessoryView = keyPadDone
+            percentUsageTextEntry.isHidden = false
+            percentUsageTextEntry.keyboardType = UIKeyboardType.numberPad
+            percentUsageTextEntry.becomeFirstResponder()
+        }
+        else{
+            percentAlertLabel.text = "Percent Cap Reminder"
+            percentUsageTextEntry.isHidden = true
+            percentUsageTextEntry.resignFirstResponder()
+        }
+        
+    }
+    
+    //done button programmatically created (not present in storyboard)
+    //done button allows for exit procedures when the user has entered a percent usage reminder
+    
+    @IBAction func donePressed(_ sender: Any) {
+        if(percentUsageTextEntry.hasText == false || Int(percentUsageTextEntry.text!)!>100){
+            percentAlertSwitch.isOn = false
+        }
+        else{
+            percentAlertLabel.text = "Percent Cap Reminder: \(percentUsageTextEntry.text!)%"
+        }
+        
+        percentUsageTextEntry.resignFirstResponder()
+        percentUsageTextEntry.isHidden = true
+        
+        
+    }
+    
     
     @IBAction func saveButtonPressed(_ sender: Any) {
         saveButton.isHidden = true

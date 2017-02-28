@@ -187,7 +187,7 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     
     func barChartView(_ barChartView: JBBarChartView!, colorForBarViewAt index: UInt) -> UIColor! {
         //switches the color between each graph
-        return (index % 2 == 0) ? UIColor.blue : UIColor.green
+        return (index % 2 == 0) ? UIColor.darkGray : UIColor.white
         
         
     }
@@ -211,7 +211,7 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
         return UIColor.black
     }
     func barPadding(for barChartView: JBBarChartView!) -> CGFloat {
-        return CGFloat(3.0)
+        return CGFloat(7.0)
     }
     
     
@@ -239,7 +239,7 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     
     func lineChartView(_ lineChartView: JBLineChartView!, colorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
         if (lineIndex == 0){
-            return UIColor.green
+            return UIColor.white
         }
         
         return UIColor.purple
@@ -250,7 +250,7 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     }
     
     func lineChartView(_ lineChartView: JBLineChartView!, selectionColorForDotAtHorizontalIndex horizontalIndex: UInt, atLineIndex lineIndex: UInt) -> UIColor! {
-        return UIColor.yellow
+        return UIColor.black
     }
     
     func lineChartView(_ lineChartView: JBLineChartView!, smoothLineAtLineIndex lineIndex: UInt) -> Bool {
@@ -270,16 +270,16 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     }
     
     func lineChartView(_ lineChartView: JBLineChartView!, dotRadiusForDotAtHorizontalIndex horizontalIndex: UInt, atLineIndex lineIndex: UInt) -> CGFloat {
-        return CGFloat(10)
+        return CGFloat(14)
     }
-    func lineChartView(_ lineChartView: JBLineChartView!, fillColorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
+   /* func lineChartView(_ lineChartView: JBLineChartView!, fillColorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
         if (lineIndex == 0) {
-            return UIColor.blue
+            return UIColor.darkGray
         }
         else {
-            return UIColor.green
+            return UIColor.white
         }
-    }
+    }*/
     
     
     
