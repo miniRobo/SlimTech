@@ -21,6 +21,11 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     @IBOutlet weak var xLabel: UILabel!
     @IBOutlet weak var yLabel: UILabel!
     
+    @IBOutlet weak var batteryUse: UILabel!
+    @IBOutlet weak var screenTime: UILabel!
+    @IBOutlet weak var mainApplication: UILabel!
+    
+    
     //TEST DATA
     
     //for background testing
@@ -37,10 +42,19 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
         super.viewDidLoad()
         view.backgroundColor = UIColor.black
         
+<<<<<<< Updated upstream
         //for background testing
         //this function monitor if the app moved to the background state
         NotificationCenter.default.addObserver(self, selector: #selector(detectBackground), name: Notification.Name.UIApplicationDidEnterBackground, object: nil)
         //end testing
+=======
+        //bottom view of application setup
+        //sets label variables to default values
+        batteryUse.isHidden = true
+        screenTime.isHidden = true
+        mainApplication.isHidden = true
+        
+>>>>>>> Stashed changes
         
      //creation for the barChart and LineChart views
         
@@ -210,6 +224,10 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
         let key = chartLegend[Int(index)]
         
         informationLabel.text = "Usage at \(key): \(data)"
+        
+        batteryUse.isHidden = false
+        screenTime.isHidden = false
+        mainApplication.isHidden = false
         
     }
     

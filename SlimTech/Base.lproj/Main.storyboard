@@ -53,6 +53,29 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUg-5E-5jY">
                                 <rect key="frame" x="25" y="408" width="327" height="251"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Battery Use:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcU-hd-cc1">
+                                        <rect key="frame" x="8" y="8" width="148" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Screen Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aC-nD-ouU">
+                                        <rect key="frame" x="8" y="34" width="148" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Main Application:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSa-FZ-JVm">
+                                        <rect key="frame" x="8" y="61" width="148" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8k-TT-0zH" userLabel="YLabel">
@@ -104,8 +127,11 @@
                     </view>
                     <connections>
                         <outlet property="barChart" destination="yx8-8J-9Tg" id="j0z-uo-aZP"/>
+                        <outlet property="batteryUse" destination="NcU-hd-cc1" id="jEs-de-ai1"/>
                         <outlet property="informationLabel" destination="Otk-EE-KG3" id="q6e-Ny-GeA"/>
                         <outlet property="lineChart" destination="cHq-MT-Ufd" id="PkV-iA-WBL"/>
+                        <outlet property="mainApplication" destination="iSa-FZ-JVm" id="D7I-X1-6ZD"/>
+                        <outlet property="screenTime" destination="2aC-nD-ouU" id="5ap-Ql-9hI"/>
                         <outlet property="switchButton" destination="prS-Ai-8e3" id="qbG-pB-eZP"/>
                         <outlet property="xLabel" destination="XLE-1i-wdh" id="KFw-bz-08n"/>
                         <outlet property="yLabel" destination="g8k-TT-0zH" id="ChY-od-Apf"/>
