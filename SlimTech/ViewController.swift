@@ -42,19 +42,16 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
         super.viewDidLoad()
         view.backgroundColor = UIColor.black
         
-<<<<<<< Updated upstream
+
         //for background testing
         //this function monitor if the app moved to the background state
         NotificationCenter.default.addObserver(self, selector: #selector(detectBackground), name: Notification.Name.UIApplicationDidEnterBackground, object: nil)
         //end testing
-=======
         //bottom view of application setup
         //sets label variables to default values
         batteryUse.isHidden = true
         screenTime.isHidden = true
         mainApplication.isHidden = true
-        
->>>>>>> Stashed changes
         
      //creation for the barChart and LineChart views
         
