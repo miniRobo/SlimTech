@@ -105,6 +105,21 @@
                                     <segue destination="auS-7L-bU6" kind="show" id="rTt-5h-CE0"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nlk-kI-UA2">
+                                <rect key="frame" x="100" y="5" width="177" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="dg6-Un-A05"/>
+                                    <constraint firstAttribute="height" constant="28" id="oqt-mA-PDe"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Bar"/>
+                                    <segment title="Line"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentButtonPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="eu8-LR-grB"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.023899266556147426" green="0.3787705098624729" blue="0.8006193329015544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -114,9 +129,12 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Otk-EE-KG3" secondAttribute="trailing" constant="7" id="8nF-Ae-FZb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yx8-8J-9Tg" secondAttribute="trailing" constant="9" id="Aic-OX-XCf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cHq-MT-Ufd" secondAttribute="trailing" constant="9" id="CRy-0N-v51"/>
+                            <constraint firstItem="nlk-kI-UA2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="5" id="Fym-0b-71D"/>
                             <constraint firstItem="yx8-8J-9Tg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="H6M-Ie-Yam"/>
                             <constraint firstAttribute="trailing" secondItem="DT5-34-rLd" secondAttribute="trailing" id="JiN-ep-ZHb"/>
                             <constraint firstItem="Otk-EE-KG3" firstAttribute="top" secondItem="cHq-MT-Ufd" secondAttribute="bottom" constant="16" id="Mjn-sx-nSi"/>
+                            <constraint firstItem="nlk-kI-UA2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="NIG-lM-8fF"/>
+                            <constraint firstAttribute="trailing" secondItem="nlk-kI-UA2" secondAttribute="trailing" constant="98" id="RdD-hL-vJ7"/>
                             <constraint firstItem="prS-Ai-8e3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="d4d-LA-bHU"/>
                             <constraint firstItem="Otk-EE-KG3" firstAttribute="top" secondItem="yx8-8J-9Tg" secondAttribute="bottom" constant="16" id="lRL-dn-xfr"/>
                             <constraint firstItem="yx8-8J-9Tg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="9" id="o7n-pF-RCI"/>
@@ -139,7 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="139.880059970015"/>
+            <point key="canvasLocation" x="144.80000000000001" y="139.880059970015"/>
         </scene>
         <!--SettingsVC-->
         <scene sceneID="kLD-e9-pw9">

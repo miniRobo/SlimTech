@@ -13,7 +13,7 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     
     @IBOutlet weak var barChart: JBBarChartView!
     @IBOutlet weak var switchButton: UIButton!
-    
+    @IBOutlet weak var segmentButton: UISegmentedControl!
     @IBOutlet weak var lineChart: JBLineChartView!
     
     @IBOutlet weak var informationLabel: UILabel!
@@ -41,6 +41,8 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black
+        switchButton.isHidden = true
+        switchButton.isEnabled = false
         
 
         //for background testing
@@ -124,7 +126,7 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
         let header = UILabel(frame: CGRect(x: 0, y: 0, width: barChart.frame.width, height: 25))
         header.textColor = UIColor.black
         header.font = UIFont.systemFont(ofSize: 24)
-        header.text = "Phone Usage"
+        //header.text = "Phone Usage"
         informationLabel.textColor = UIColor.white
         header.textAlignment = NSTextAlignment.center
         
@@ -134,7 +136,7 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
        
 
     }
-    
+   
     
     
     @IBAction func switchButtonPressed(_ sender: Any) {
@@ -159,7 +161,27 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
         }
     }
     
-    
+    @IBAction func segmentButtonPressed(_ sender: Any) {
+        if(barChart.isHidden == true){
+            
+            barChart.isHidden = false
+            lineChart.isHidden = true
+            
+            barChart.footerView = lineChart.footerView
+            barChart.headerView = lineChart.headerView
+        }
+        else{
+            
+            barChart.isHidden = true
+            lineChart.isHidden = false
+            
+            lineChart.footerView = barChart.footerView
+            lineChart.headerView = barChart.headerView
+            
+        }
+
+    }
+  
     
     
     override func viewDidAppear(_ animated: Bool) {

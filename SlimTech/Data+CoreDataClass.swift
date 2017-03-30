@@ -12,5 +12,11 @@ import CoreData
 
 @objc(Data)
 public class Data: NSManagedObject {
+    
+    public override func awakeFromInsert() {
+        super.awakeFromInsert()
+        
+        
+    }
 
 }
