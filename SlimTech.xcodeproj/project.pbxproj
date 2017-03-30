@@ -27,6 +27,10 @@
 		5F86FEFF1E5263D200A5DE86 /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F86FEF91E5263D200A5DE86 /* JBChartView.m */; };
 		5F86FF001E5263D200A5DE86 /* JBLineChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F86FEFA1E5263D200A5DE86 /* JBLineChartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F86FF011E5263D200A5DE86 /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F86FEFB1E5263D200A5DE86 /* JBLineChartView.m */; };
+		5FCD900A1E8D8EBA00DC1407 /* Data+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCD90061E8D8EBA00DC1407 /* Data+CoreDataClass.swift */; };
+		5FCD900B1E8D8EBA00DC1407 /* Data+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCD90071E8D8EBA00DC1407 /* Data+CoreDataProperties.swift */; };
+		5FCD900C1E8D8EBA00DC1407 /* Settings+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCD90081E8D8EBA00DC1407 /* Settings+CoreDataClass.swift */; };
+		5FCD900D1E8D8EBA00DC1407 /* Settings+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCD90091E8D8EBA00DC1407 /* Settings+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +113,10 @@
 		5F86FEF91E5263D200A5DE86 /* JBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartView.m; sourceTree = "<group>"; };
 		5F86FEFA1E5263D200A5DE86 /* JBLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartView.h; sourceTree = "<group>"; };
 		5F86FEFB1E5263D200A5DE86 /* JBLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartView.m; sourceTree = "<group>"; };
+		5FCD90061E8D8EBA00DC1407 /* Data+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5FCD90071E8D8EBA00DC1407 /* Data+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5FCD90081E8D8EBA00DC1407 /* Settings+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Settings+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5FCD90091E8D8EBA00DC1407 /* Settings+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Settings+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +187,7 @@
 		5F86FEA01E52632B00A5DE86 /* SlimTech */ = {
 			isa = PBXGroup;
 			children = (
+				5FCD900E1E8D8EC800DC1407 /* Model */,
 				5F86FEA11E52632B00A5DE86 /* AppDelegate.swift */,
 				5F86FEA31E52632B00A5DE86 /* ViewController.swift */,
 				5F0B225B1E582EBA00271CD3 /* SettingsVC.swift */,
@@ -239,6 +248,25 @@
 				5F86FEFB1E5263D200A5DE86 /* JBLineChartView.m */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		5FCD900E1E8D8EC800DC1407 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5FCD90061E8D8EBA00DC1407 /* Data+CoreDataClass.swift */,
+				5FCD90081E8D8EBA00DC1407 /* Settings+CoreDataClass.swift */,
+				5FCD90101E8D8EDB00DC1407 /* Generated */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5FCD90101E8D8EDB00DC1407 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				5FCD90071E8D8EBA00DC1407 /* Data+CoreDataProperties.swift */,
+				5FCD90091E8D8EBA00DC1407 /* Settings+CoreDataProperties.swift */,
+			);
+			name = Generated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,10 +481,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FCD900D1E8D8EBA00DC1407 /* Settings+CoreDataProperties.swift in Sources */,
+				5FCD900A1E8D8EBA00DC1407 /* Data+CoreDataClass.swift in Sources */,
 				5F86FEA41E52632B00A5DE86 /* ViewController.swift in Sources */,
+				5FCD900C1E8D8EBA00DC1407 /* Settings+CoreDataClass.swift in Sources */,
 				5F0B225C1E582EBA00271CD3 /* SettingsVC.swift in Sources */,
 				5F86FEA21E52632B00A5DE86 /* AppDelegate.swift in Sources */,
 				5F86FEAA1E52632B00A5DE86 /* SlimTech.xcdatamodeld in Sources */,
+				5FCD900B1E8D8EBA00DC1407 /* Data+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
