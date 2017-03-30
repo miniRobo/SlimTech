@@ -97,8 +97,10 @@ class SettingsVC: UIViewController {
     //done button allows for exit procedures when the user has entered a percent usage reminder
     
     @IBAction func donePressed(_ sender: Any) {
-        if(percentUsageTextEntry.hasText == false || Int(percentUsageTextEntry.text!)!>100){
+        if(percentUsageTextEntry.hasText == false){
             percentAlertSwitch.isOn = false
+        }else if(Int(percentUsageTextEntry.text!)!>100){
+            percentAlertLabel.text = "Percent Cap Reminder: 100%"
         }
         else{
             percentAlertLabel.text = "Percent Cap Reminder: \(percentUsageTextEntry.text!)%"

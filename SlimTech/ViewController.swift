@@ -343,7 +343,7 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
         switch UIApplication.shared.applicationState {
         case .active:
             print("App is foreground")
-            counterLabel.text = results
+        //    counterLabel.text = results
         case .background:
             print("App is backgrounded. Next number = \(countNum)")
             print("Background time remaining = \(UIApplication.shared.backgroundTimeRemaining) seconds")
