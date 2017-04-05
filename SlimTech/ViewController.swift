@@ -8,8 +8,9 @@
 
 import UIKit
 import JBChart
+import CoreData
 
-class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSource, JBLineChartViewDataSource, JBLineChartViewDelegate {
+class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSource, JBLineChartViewDataSource, JBLineChartViewDelegate, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var barChart: JBBarChartView!
     @IBOutlet weak var switchButton: UIButton!
@@ -36,8 +37,8 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     
     //var chartData = [0.5,1.5,3.5,4.0,4.1,7.7,9.9,10,11,11,11,11,11,11,11,12.5,13,13.2,13.3,15,15.1,15.1,15.1,17.9]
     //var chartLegend = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
-    var chartData = [1,2,3,7,9,9.5,10.3,18]
-    var chartLegend = [1,2,3,4,5,6,7,8]
+    var chartData = [1,2,3,7,9,9.5,10.3,18,18,18,18,18,18,18,19,19,19,20,21,22,22,23,23,23]
+    var chartLegend = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black
@@ -84,15 +85,21 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
         //TODO: fix resizing issue
         var xString = " "
         var yString = ""
+        var step = 3
+        var i = 0
         
-        for xValues in chartLegend {
-            xString += "   \(xValues)    "
-        }
+        /*while(i<8){
+            xString += "    \(step)    "
+            step = step+3
+            i = i+1
+        }*/
+        xString = "      3       6       9      12       3      6       9      12"
+        
         xLabel.text = xString
         
         var max: Double = Double(chartData.max()!)
         var increment = (Double(max)/9.0).rounded()
-        var i = 9
+        i = 9
         max = 8 * increment
         
         while(i>0){
@@ -239,10 +246,20 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     func barChartView(_ barChartView: JBBarChartView!, didSelectBarAt index: UInt, touch touchPoint: CGPoint) {
         //provides animation for the clicking mechanism on the graph
         //displays the data to the user for that time clicked
-        let data = chartData[Int(index)]
-        let key = chartLegend[Int(index)]
+        var data = chartData[Int(index)]
+        var key = chartLegend[Int(index)]
         
-        informationLabel.text = "Usage at \(key): \(data)"
+        var arrayKey = Int(index)
+        if(arrayKey > 11){
+            key = key - 12
+        }
+        
+        
+        if(arrayKey < 11 || arrayKey == 23){
+            informationLabel.text = "Usage at \(key) AM: \(data)"
+        }else {
+            informationLabel.text = "Usage at \(key) PM: \(data)"
+        }
         
         batteryUse.isHidden = false
         screenTime.isHidden = false
@@ -258,7 +275,7 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
         return UIColor.black
     }
     func barPadding(for barChartView: JBBarChartView!) -> CGFloat {
-        return CGFloat(7.0)
+        return CGFloat(2.0)
     }
     
     
@@ -306,9 +323,18 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     
     func lineChartView(_ lineChartView: JBLineChartView!, didSelectLineAt lineIndex: UInt, horizontalIndex: UInt) {
         if (lineIndex == 0){
-            let data = chartData[Int(horizontalIndex)]
-            let key = chartLegend[Int(horizontalIndex)]
-            informationLabel.text = "Usage at \(key): \(data)"
+            var data = chartData[Int(horizontalIndex)]
+            var key = chartLegend[Int(horizontalIndex)]
+            var arrayKey = Int(horizontalIndex)
+            if(arrayKey > 11){
+                key = key - 12
+            }
+
+            if(arrayKey < 11 || arrayKey == 23){
+                informationLabel.text = "Usage at \(key) AM: \(data)"
+            }else {
+                informationLabel.text = "Usage at \(key) PM: \(data)"
+            }
         }
     }
     
@@ -317,7 +343,7 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     }
     
     func lineChartView(_ lineChartView: JBLineChartView!, dotRadiusForDotAtHorizontalIndex horizontalIndex: UInt, atLineIndex lineIndex: UInt) -> CGFloat {
-        return CGFloat(14)
+        return CGFloat(8)
     }
    /* func lineChartView(_ lineChartView: JBLineChartView!, fillColorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
         if (lineIndex == 0) {
