@@ -23,10 +23,13 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     @IBOutlet weak var yLabel: UILabel!
     
     @IBOutlet weak var batteryUse: UILabel!
+    @IBOutlet weak var batteryUseRight: UILabel!
     @IBOutlet weak var screenTime: UILabel!
+    @IBOutlet weak var screenTimeRight: UILabel!
     @IBOutlet weak var mainApplication: UILabel!
+    @IBOutlet weak var mainApplicationRight: UILabel!
     
-    var fetchedResultsController: NSFetchedResultsController<Data>!
+    var controller: NSFetchedResultsController<Data>!
     
     
     //TEST DATA
@@ -37,10 +40,11 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     var countNum = 1
     //end testing
     
-    //var chartData = [0.5,1.5,3.5,4.0,4.1,7.7,9.9,10,11,11,11,11,11,11,11,12.5,13,13.2,13.3,15,15.1,15.1,15.1,17.9]
-    //var chartLegend = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
-    var chartData = [1,2,3,7,9,9.5,10.3,18,18,18,18,18,18,18,19,19,19,20,21,22,22,23,23,23]
-    var chartLegend = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+    //var yValues = [0.5,1.5,3.5,4.0,4.1,7.7,9.9,10,11,11,11,11,11,11,11,12.5,13,13.2,13.3,15,15.1,15.1,15.1,17.9]
+    //var xValues = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+    var yValues = [1.2,2.4,3.2,7.2,9.6,9.5,10.3,18.2,18.3,18.5,18.6,18.7,18.9,18.9,19.0,19.1,19.5,20.6,21.0,22.2,22.3,23.0,23.9,23.9]
+    var xValues = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+    var battery = [99,98,97,96,95,94,93,92,91,90,89,88,87,86,85,84,83,82,81,80,79,78,77,76]
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black
@@ -65,14 +69,14 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
         barChart.delegate = self
         barChart.dataSource = self
         barChart.minimumValue = 0
-        barChart.maximumValue = CGFloat(chartData.max()!)
+        barChart.maximumValue = CGFloat(yValues.max()!)
         
         lineChart.isHidden = true
         lineChart.backgroundColor = UIColor.gray
         lineChart.delegate = self
         lineChart.dataSource = self
         lineChart.minimumValue = 0
-        lineChart.maximumValue = CGFloat(chartData.max()!)
+        lineChart.maximumValue = CGFloat(yValues.max()!)
         
         barChart.reloadData()
         lineChart.reloadData()
@@ -99,7 +103,7 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
         
         xLabel.text = xString
         
-        var max: Double = Double(chartData.max()!)
+        var max: Double = Double(yValues.max()!)
         var increment = (Double(max)/9.0).rounded()
         i = 9
         max = 8 * increment
@@ -228,12 +232,12 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     
     func numberOfBars(in barChartView: JBBarChartView!) -> UInt {
         
-        return UInt(chartData.count)
+        return UInt(yValues.count)
     }
     
     func barChartView(_ barChartView: JBBarChartView!, heightForBarViewAt index: UInt) -> CGFloat {
         //returning the height for each bar on the graph
-        return CGFloat(chartData[Int(index)])
+        return CGFloat(yValues[Int(index)])
         
     }
     
@@ -248,21 +252,23 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     func barChartView(_ barChartView: JBBarChartView!, didSelectBarAt index: UInt, touch touchPoint: CGPoint) {
         //provides animation for the clicking mechanism on the graph
         //displays the data to the user for that time clicked
-        var data = chartData[Int(index)]
-        var key = chartLegend[Int(index)]
+        var data = yValues[Int(index)]
+        var key = xValues[Int(index)]
         
         var arrayKey = Int(index)
         if(arrayKey > 11){
             key = key - 12
         }
+        var time = calculateTime(data: data)
         
         
         if(arrayKey < 11 || arrayKey == 23){
-            informationLabel.text = "Usage at \(key) AM: \(data)"
+            informationLabel.text = "Usage at \(key) AM"
         }else {
-            informationLabel.text = "Usage at \(key) PM: \(data)"
+            informationLabel.text = "Usage at \(key) PM"
         }
-        
+        screenTimeRight.text = time
+        batteryUseRight.text = "\(battery[Int(index)])"
         batteryUse.isHidden = false
         screenTime.isHidden = false
         mainApplication.isHidden = false
@@ -289,7 +295,7 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     
     func lineChartView(_ lineChartView: JBLineChartView!, numberOfVerticalValuesAtLineIndex lineIndex: UInt) -> UInt {
         if (lineIndex == 0){
-            return UInt(chartData.count)
+            return UInt(yValues.count)
         }
         
         return 0
@@ -297,7 +303,7 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     
     func lineChartView(_ lineChartView: JBLineChartView!, verticalValueForHorizontalIndex horizontalIndex: UInt, atLineIndex lineIndex: UInt) -> CGFloat {
         if(lineIndex == 0) {
-            return CGFloat(chartData[Int(horizontalIndex)])
+            return CGFloat(yValues[Int(horizontalIndex)])
         }
         
         return 0
@@ -325,19 +331,27 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     
     func lineChartView(_ lineChartView: JBLineChartView!, didSelectLineAt lineIndex: UInt, horizontalIndex: UInt) {
         if (lineIndex == 0){
-            var data = chartData[Int(horizontalIndex)]
-            var key = chartLegend[Int(horizontalIndex)]
+            var data = yValues[Int(horizontalIndex)]
+            var key = xValues[Int(horizontalIndex)]
             var arrayKey = Int(horizontalIndex)
             if(arrayKey > 11){
                 key = key - 12
             }
+            var time = calculateTime(data: data)
+            screenTimeRight.text = time
+            batteryUseRight.text = "\(battery[Int(horizontalIndex)])"
+
 
             if(arrayKey < 11 || arrayKey == 23){
-                informationLabel.text = "Usage at \(key) AM: \(data)"
+                informationLabel.text = "Usage at \(key) AM"
             }else {
-                informationLabel.text = "Usage at \(key) PM: \(data)"
+                informationLabel.text = "Usage at \(key) PM"
             }
         }
+        batteryUse.isHidden = false
+        screenTime.isHidden = false
+        mainApplication.isHidden = false
+
     }
     
     func didDeselectLine(in lineChartView: JBLineChartView!) {
@@ -346,6 +360,26 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     
     func lineChartView(_ lineChartView: JBLineChartView!, dotRadiusForDotAtHorizontalIndex horizontalIndex: UInt, atLineIndex lineIndex: UInt) -> CGFloat {
         return CGFloat(8)
+    }
+    
+    func calculateTime(data:Double) -> String{
+        var time = ""
+        var minutes = 0.0
+        var value = data
+        if(data != value.rounded()){
+            minutes = data - value.rounded()
+            minutes = 60*minutes
+            if(minutes<0){
+                minutes = minutes*(-1)
+                minutes = 60 - minutes
+            }
+            time = "\(Int(data)) hrs, \(Int(minutes)) min"
+        }else{
+            time = "\(Int(data)) hrs"
+        }
+        
+        
+        return time
     }
    /* func lineChartView(_ lineChartView: JBLineChartView!, fillColorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
         if (lineIndex == 0) {
@@ -424,8 +458,22 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     func attemptFetch(){
         
         let fetchRequest: NSFetchRequest<Data> = Data.fetchRequest()
+       // let dateSort = NSSortDescriptor(key: "created", ascending: false)
+       // fetchRequest.sortDescriptors = [dateSort]
+        
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        
+        do{
+            try controller.performFetch()
+        } catch {
+            let error = error as NSError
+            print("\(error)")
+        }
+        
         
     }
+    
+    
     
     
     
