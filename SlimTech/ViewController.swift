@@ -26,6 +26,8 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
     @IBOutlet weak var screenTime: UILabel!
     @IBOutlet weak var mainApplication: UILabel!
     
+    var fetchedResultsController: NSFetchedResultsController<Data>!
+    
     
     //TEST DATA
     
@@ -411,6 +413,27 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
         
     }
     //end testing
+    
+
+    
+    
+    
+    //////////////*****   CORE DATA IMPLEMENTATION     *****///////////////////
+    
+    
+    func attemptFetch(){
+        
+        let fetchRequest: NSFetchRequest<Data> = Data.fetchRequest()
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
